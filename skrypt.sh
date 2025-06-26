@@ -19,6 +19,17 @@ elif [ "$1" == "--init" ] || [ "$1" == "-i" ]; then
   export PATH="$PATH:$(pwd)/lab4_clone"
 fi
 
+elif [ "$1" == "--error" ] || [ "$1" == "-e" ]; then
+  count=${2:-100}
+  mkdir -p errorx
+  for ((i=1; i<=count; i++)); do
+    filename="errorx/error$i.txt"
+    echo "Plik błędu nr $i" > "$filename"
+    echo "Utworzony przez: $0" >> "$filename"
+    echo "Data: $(date)" >> "$filename"
+  done
+fi
+
 elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
   echo "--date         Wyświetla dzisiejszą datę"
   echo "--logs [n]     Tworzy n plików logx.txt (domyślnie 100)"
