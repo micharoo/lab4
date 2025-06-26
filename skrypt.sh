@@ -31,9 +31,11 @@ elif [ "$1" == "--error" ] || [ "$1" == "-e" ]; then
 fi
 
 elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
-  echo "--date         Wyświetla dzisiejszą datę"
-  echo "--logs [n]     Tworzy n plików logx.txt (domyślnie 100)"
-  echo "--help         Wyświetla listę dostępnych opcji"
+  --date       lub -d         Wyświetla dzisiejszą datę
+  --logs [n]   lub -l [n]     Tworzy n plików logx.txt (domyślnie 100)
+  --error [n]  lub -e [n]     Tworzy n plików errorx/errorx.txt (domyślnie 100)
+  --init       lub -i         Klonuje repo i ustawia PATH
+  --help       lub -h         Wyświetla pomoc
 
 else
   echo "Nieznana opcja. Użyj --help lub -h."
