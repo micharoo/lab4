@@ -12,6 +12,13 @@ elif [ "$1" == "--logs" ] || [ "$1" == "-l" ]; then
     echo "Data utworzenia: $(date)" >> "$filename"
   done
 
+elif [ "$1" == "--init" ] || [ "$1" == "-i" ]; then
+  echo "Klonowanie repozytorium lab4 do katalogu: $(pwd)"
+  git clone https://github.com/micharoo/lab4.git lab4_clone
+  echo "Dodanie repozytorium do PATH: $(pwd)/lab4_clone"
+  export PATH="$PATH:$(pwd)/lab4_clone"
+fi
+
 elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
   echo "--date         Wyświetla dzisiejszą datę"
   echo "--logs [n]     Tworzy n plików logx.txt (domyślnie 100)"
