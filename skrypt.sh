@@ -12,4 +12,9 @@ elif [ "$1" == "--logs" ]; then
     echo "Data utworzenia: $(date)" >> "$filename"
   done
 
+elif [ "$1" == "--help" ]; then
+  echo "--date         Wyświetla dzisiejszą datę"
+  echo "--logs [n]     Tworzy n plików logx.txt (domyślnie 100)"
+  echo "--help         Wyświetla listę dostępnych opcji"
+
 fi
